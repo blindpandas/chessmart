@@ -42,7 +42,7 @@ with import_bundled(os.path.join(LIB_DIRECTORY, "lichess")):
     from aiohttp.client_exceptions import ClientError, ClientConnectorError
 
 
-PERSONAL_TOKEN = "lip_vU2uugFDpnfUj5ZHj6dF"
+PERSONAL_TOKEN = ""
 CONNECTION_RELATED_EXCEPTIONS = (
     ConnectionError,
     ClientConnectorError,
