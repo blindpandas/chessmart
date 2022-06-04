@@ -111,8 +111,6 @@ class TimeControl(DisplayStringIntEnum):
 class ChessVariant(DisplayStringIntEnum):
     STANDARD = 0
     CHESS960 = 1
-    SUICIDE = 2
-    GIVEAWAY = 3
     ANTICHESS = 4
     ATOMIC = 5
     KINGOFTHEHILL = 6
@@ -137,8 +135,6 @@ class ChessVariant(DisplayStringIntEnum):
         return {
             ChessVariant.STANDARD: _("Standard"),
             ChessVariant.CHESS960: _("Chess 960"),
-            ChessVariant.SUICIDE: _("Suicide"),
-            ChessVariant.GIVEAWAY: _("Give away"),
             ChessVariant.ANTICHESS: _("Anti chess"),
             ChessVariant.ATOMIC: _("Atomic"),
             ChessVariant.KINGOFTHEHILL: _("King of the hill"),

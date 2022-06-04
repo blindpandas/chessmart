@@ -214,3 +214,10 @@ class SimpleList(MenuObject):
                 parent=self, name=item_text, close_gesture=self.close_gesture
             ),
         )
+
+    def clear(self):
+        self.init_container_state(
+            items=[],
+            on_top_edge=self.onEdge,
+            on_bottom_edge=self.onEdge,
+        )

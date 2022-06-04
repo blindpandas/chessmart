@@ -83,14 +83,14 @@ class ChessboardMenu(wx.Menu):
         self.global_plugin_object.initialize_and_show_chessboard_dialog(vboard_cls, game_info)
 
     def onRandomPuzzle(self, event):
-        from .puzzle import get_a_random_puzzle
-        puzzle = get_a_random_puzzle()
+        from .puzzle_database import RandomPuzzleSet
+        puzzles = RandomPuzzleSet()
         game_info = GameInfo(
-            pychess_board=chess.Board(puzzle.fen),
+            pychess_board=chess.Board(),
             variant=ChessVariant.STANDARD,
             time_control=NULL_TIME_CONTROL,
             prospective=None,
-            vboard_kwargs=dict(puzzle=puzzle)
+            vboard_kwargs=dict(puzzles=puzzles)
         )
         self.global_plugin_object.initialize_and_show_chessboard_dialog(
             PuzzleChessboard,

@@ -21,16 +21,24 @@ from .time_control import ChessTimeControl
 from .concurrency import call_threaded
 
 
-TIME_CHECK_INTERVAL = 1000
-RSVG_CONVERT_EXECUTABLE = os.path.join(
-    BIN_DIRECTORY, "rsvg_convert", "rsvg_convert.exe"
-)
-
-
 with import_bundled():
     from wx_svg import SVGimage
     import chess
     import chess.svg
+
+
+TIME_CHECK_INTERVAL = 1000
+RSVG_CONVERT_EXECUTABLE = os.path.join(
+    BIN_DIRECTORY, "rsvg_convert", "rsvg_convert.exe"
+)
+BOARD_COLOR_MAP = {
+    "square light": "#ff7187fe",
+    "square dark": "#cd3721ff",
+    "square light lastmove": "#c88771ff",
+    "square dark lastmove": "#e63721ff",
+    "margin": "",
+    "coord": "",
+}
 
 
 class ChessboardDialog(wx.Frame):
@@ -87,7 +95,9 @@ class ChessboardDialog(wx.Frame):
         if "flipped" not in chess_svg_kwargs:
             chess_svg_kwargs["flipped"] = self.chessboard.is_board_visually_flipped
         return chess.svg.board(
-            board or self.chessboard.board, **chess_svg_kwargs
+            board or self.chessboard.board,
+            colors=BOARD_COLOR_MAP,
+            **chess_svg_kwargs
         ).encode("utf-8")
 
     def onPaint(self, event):

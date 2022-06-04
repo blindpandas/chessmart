@@ -1,10 +1,12 @@
 # coding: utf-8
 
+import typing
 import time
 import enum
 
 
-Seconds = int
+Seconds = typing.NewType("Seconds", int)
+
 
 class ClockState(enum.IntFlag):
     NOT_STARTED = enum.auto()

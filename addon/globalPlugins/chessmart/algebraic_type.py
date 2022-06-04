@@ -33,7 +33,7 @@ class AlgebraicTypeMeta(type):
 
 
 class AlgebraicType(metaclass=AlgebraicTypeMeta):
-    """Represent an algebraic type."""
+    """Represents an algebraic type."""
 
     @classmethod
     def __init_subclass__(cls, **kwargs):

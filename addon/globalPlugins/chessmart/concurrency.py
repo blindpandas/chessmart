@@ -20,6 +20,7 @@ ASYNCIO_LOOP_THREAD = None
 def start_asyncio_event_loop():
     global ASYNCIO_LOOP_THREAD, ASYNCIO_EVENT_LOOP
     if ASYNCIO_LOOP_THREAD:
+        log.debug("Attempted to start the asyncio eventloop while it is already running")
         return
 
     def _thread_target():

@@ -279,6 +279,8 @@ class BaseVirtualChessboard(KeyboardNavigableNVDAObjectMixin, NVDAObject):
         for (i, j) in zip([i * 8 for i in range(0, 8)], [j * 8 for j in range(1, 9)])
     )
     cell_class = BaseChessboardCell
+    can_draw = True
+    can_resign = True
 
     def __init__(
         self,
@@ -306,7 +308,7 @@ class BaseVirtualChessboard(KeyboardNavigableNVDAObjectMixin, NVDAObject):
         self._chess_cells = [
             self.cell_class(parent=self, index=i) for i in range(0, 64)
         ]
-        self._focused_cell = 4 if not self.is_board_flipped else 60
+        self._focused_cell = self.get_initial_focus_cell()
         self.is_game_over = False
         self._current_focused_object = None
         self.score_sheet_menu = SimpleList(
@@ -319,6 +321,9 @@ class BaseVirtualChessboard(KeyboardNavigableNVDAObjectMixin, NVDAObject):
         chessboard_closed_signal.connect(
             lambda s: self.game_over(), sender=self, weak=False
         )
+
+    def get_initial_focus_cell(self):
+        return 4 if not self.is_board_flipped else 60
 
     @property
     def is_board_flipped(self):

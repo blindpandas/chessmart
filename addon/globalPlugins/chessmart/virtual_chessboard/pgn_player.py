@@ -103,6 +103,8 @@ class PGNChessboardCell(BaseChessboardCell):
 
 class PGNPlayerChessboard(BaseVirtualChessboard):
     cell_class = PGNChessboardCell
+    can_draw = False
+    can_resign = False
 
     def __init__(self, *args, **kwargs):
         game = kwargs.pop("game")

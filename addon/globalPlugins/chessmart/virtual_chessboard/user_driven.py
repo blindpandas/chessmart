@@ -95,7 +95,7 @@ class UserDrivenCell(BaseChessboardCell):
 
     @script(gesture="kb:control+d")
     def script_make_draw_offer(self, gesture):
-        if self.parent.is_game_over:
+        if self.parent.is_game_over or not self.parent.can_draw:
             return
         if self.parent.draw_offered:
             self.parent.draw_offered = False
