@@ -1,0 +1,18 @@
+name: Build NVDA add-on
+
+## Actions that will be executed when you push code currently none
+on:
+  push:
+    tags: ["v*"]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Generate Release APK
+        run: ./build.gh-actions.sh
+      - uses: actions/upload-artifact@master
+        with:
+          name: chessmart.nvda-addon
+          path: *.nvda-addon
