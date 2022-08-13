@@ -15,6 +15,15 @@
     * If the play mode is user versus computer; you can adjust the engine options, including engine strength and engine delay
 4. Enjoy!
 
+## Useful Keyboard shortcuts in the Chessboard
+
+* F1: announce the position of your pieces.
+* Shift + F1: announce the position of your opponent's pieces.
+* F2: announce your remaining time
+* Shift + F2: announce your opponent's remaining time
+* F3: announce the currently focused piece and square using IBCA notation
+* F4: show the scoresheet which shows a list of the moves made by you and your opponents
+
 ## What about online chess?
 
 The add-on supports online chess via [lichess.org](https://lichess.org), but it is not currently enabled due to technical considerations. If there is a demand for this feature, we will consider enabling it.
