@@ -226,6 +226,11 @@ class NewGameOptionsDialog(gui.SettingsDialog):
         dialog.Show()
 
     def onSeekGame(self, event):
+        return gui.messageBox(
+            _("This feature is currently unavailable. Stay tuned! "),
+            _("Coming soon"),
+            style=wx.ICON_INFORMATION
+        )
         game_info = self.get_game_info()
         client = LichessAPIClient(game_info)
         is_rated = self.playRatedGameCheckbox.IsChecked()
@@ -244,6 +249,11 @@ class NewGameOptionsDialog(gui.SettingsDialog):
         )
 
     def onCreateChallenge(self, event):
+        return gui.messageBox(
+            _("This feature is currently unavailable. Stay tuned! "),
+            _("Coming soon"),
+            style=wx.ICON_INFORMATION
+        )
         challenge_whom = wx.GetTextFromUser(
             _("Enter the user name of the user you want to challenge:"),
             _("Challenge whom?"),

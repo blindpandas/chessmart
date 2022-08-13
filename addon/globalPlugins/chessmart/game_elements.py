@@ -45,7 +45,7 @@ class PlayMode(DisplayStringIntEnum):
         return {
             PlayMode.HUMAN_VERSUS_HUMAN: _("Human versus human"),
             PlayMode.HUMAN_VERSUS_COMPUTER: _("Human versus computer"),
-            PlayMode.ONLINE_LICHESS_ORG: _("Online (lichess.org)"),
+            PlayMode.ONLINE_LICHESS_ORG: _("Online: lichess.org (coming soon)"),
         }
 
     def get_board_class(self):
