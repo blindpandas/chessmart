@@ -1,7 +1,7 @@
 name: Build add-on
 
 on:
-    tags: ["v*"]
+  tags: ["v*"]
 
 jobs:
   build:
